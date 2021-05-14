@@ -1,8 +1,6 @@
 package ar.unrn.test;
 
-import ar.unr.model.EmpleadoRegular;
-import ar.unr.model.Empleador;
-import ar.unr.model.Empresa;
+import ar.unr.model.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,33 +10,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestCargaDeEmpleadosYCalculoDeSueldo {
     @Test
     public void creacionDeEmpresaYcagaDeEmpleados(){
-        ArrayList<String> puestos = new ArrayList<>();
-        puestos.add("DIRECTOR");
-        puestos.add("GERENTE");
-        puestos.add("MANDOS MEDIOS");
-        puestos.add("LIDER DE PROYECTO");
-        puestos.add("EMPLEADO REGULAR");
 
-        Empleador diretor = new Empleador("1",1200.00);
-        Empresa empresa = new Empresa("Empresa1",puestos,diretor);
+        EmpleadoDirector director = new EmpleadoDirector("1",1200.00);
+        Empresa empresa = new Empresa("Empresa1",director);
 
 
-        Empleador gerente1 = new Empleador("10",800.00);
+        EmpleadoGerente gerente1 = new EmpleadoGerente("10",800.00);
 
-        Empleador mandosMedios1 =new  Empleador("100",650.00);
-        Empleador mandosMedios2 =new  Empleador("101",650.00);
+        EmpleadoMandoMedio mandosMedios1 =new EmpleadoMandoMedio("100",650.00);
+        EmpleadoMandoMedio mandosMedios2 =new EmpleadoMandoMedio("101",650.00);
 
-        Empleador lideresDeProyecto1 = new Empleador("1000",500.00);
-        Empleador lideresDeProyecto2 = new Empleador("1001",500.00);
+        EmpleadoLiderDeProyecto lideresDeProyecto1 = new EmpleadoLiderDeProyecto("1000",500.00);
+        EmpleadoLiderDeProyecto lideresDeProyecto2 = new EmpleadoLiderDeProyecto("1001",500.00);
 
 
 
-        Empleador empleado1 = new Empleador("1000",400.00);
-        Empleador empleado2 = new Empleador("1001",400.00);
-        Empleador empleado3 = new Empleador("1002",400.00);
-        Empleador empleado4 = new Empleador("1003",400.00);
+        EmpleadoRegular empleado1 = new EmpleadoRegular("1000",400.00);
+        EmpleadoRegular empleado2 = new EmpleadoRegular("1001",400.00);
+        EmpleadoRegular empleado3 = new EmpleadoRegular("1002",400.00);
+        EmpleadoRegular empleado4 = new EmpleadoRegular("1003",400.00);
 
-        diretor.nuevoEmpleadoACargo(gerente1);
+        director.nuevoEmpleadoACargo(gerente1);
 
         gerente1.nuevoEmpleadoACargo(mandosMedios1);
         gerente1.nuevoEmpleadoACargo(mandosMedios2);

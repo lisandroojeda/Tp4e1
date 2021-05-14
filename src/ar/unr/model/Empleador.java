@@ -2,7 +2,7 @@ package ar.unr.model;
 
 import java.util.ArrayList;
 
-public class Empleador implements Empleado{
+public abstract class Empleador implements Empleado{
 
     private String codigoEmpleado;
     protected ArrayList<Empleado> nominaEmpleados;
